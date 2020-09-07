@@ -1,0 +1,77 @@
+a:hover{
+	background: black;
+	color: white;
+}
+
+a:active{
+	background: red;
+	color: white;
+}
+
+body{
+	background: #43982F;
+}
+
+#wrapper{
+	margin: 0 auto;
+	background: white;
+	width: 800px;
+	height: 1000px;
+
+}
+
+header{
+	padding: 0px 0px 10px 0px;
+}
+
+#horzNav:hover{
+	display: block;
+	background: black;
+	color: white;
+}
+
+#para-1{
+	word-spacing: 10px;
+}
+
+#para-2{
+	word-spacing: 20px;
+	letter-spacing: 10px;
+}
+
+footer{
+	clear: both;
+	background: black;
+	color: white;
+}
+
+ol{
+	list-style: none;
+	list-style-type: lower-greek;
+}
+
+#para-1:before{
+	content: "@@@@@@";
+}
+
+#para-1:after{
+	content: "@@@@@@";
+}
+
+li{
+	background: #f7f7f7;
+	width: 360px;
+}
+
+li:nth-child(2n){
+	background: white;
+}
+
+li:first-child{
+	background: black;
+	color: white;
+}
+
+p:first-line{
+	text-transform: uppercase;
+}

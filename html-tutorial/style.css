@@ -1,0 +1,31 @@
+div{
+	background: purple;
+	color: white;
+}
+
+#quote{
+	font-family: "verdana","gill sans";
+	color: black;
+}
+
+ul li.cartoon{
+	color:white;
+	background: steelblue;
+}
+
+h3#heading{
+	text-transform: uppercase;
+}
+
+#character ol li{
+	color: purple;
+}
+
+h3+dl{
+	background-color: black;
+	color: white;
+}
+
+p[id]{
+	background:gray;
+}
