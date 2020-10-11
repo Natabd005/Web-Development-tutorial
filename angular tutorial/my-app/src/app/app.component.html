@@ -1,0 +1,53 @@
+<h1>App component that we are looking at</h1>
+
+<!-- converted any para, string,int into interopolated form: string interpolation -->
+<p>Server with Pid is offline</p>
+<p> Server name {{Servername}} with Pid {{ServerPid}} is {{ServerStatus}}</p>
+
+<!-- property binding -->
+<button [disabled]="buttonState" (click)="toggleServerStatus()"> Toggle Server Status</button>
+
+
+<!-- two way binding-->
+<h2>Input Server Information</h2>
+<input type="text" placeholder="Server Name" [(ngModel)]="Servername">
+<h3>Display Server Information</h3>
+<p>{{Servername}}</p>
+<p>{{ServerPid}}</p>
+<p>{{ServerStatus}}</p>
+
+<!-- Assignment 1 -->
+<app-red></app-red>
+<app-green></app-green>
+<app-yellow></app-yellow>
+
+<!--Assignment 2-->
+<label for="Fname">FirstName</label>
+<input type="text" name="Fname" placeholder="First Name" [(ngModel)]="name">
+<p>My name is {{name}}</p>
+<button [disabled]="checkname()" (click) = "toggleReset()">Reset</button>
+
+
+<!-- <app-subserver></app-subserver> -->
+
+<!--directives-->
+<h4 [ngStyle]="{color: getcolor()}">This is an example of ngIF</h4> 
+<h5 [ngClass] = "{'white':flag}">This is an example of ngClass</h5>
+<p *ngIf = "flag; else elseblock"> Flag is True</p>
+<ng-template #elseblock>
+    <p>Flag is false</p>
+</ng-template>
+<h5>This is a student Roster</h5>
+<input type="text" placeholder="name" [(ngModel)]="currentName">
+<button (click) = "add()">Submit</button>
+<li *ngFor="let names of studentroster">{{names}}</li>  <!--its like a for loop-->
+
+<button (click) = "toggleFlag()">Toggle Flag</button>
+
+<!--Assignment 3-->
+<p *ngIf="flag; else elseblock1">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis ab optio fugit quasi sint facilis accusantium ducimus molestiae delectus illo accusamus sapiente reprehenderit soluta doloremque beatae repellat, quae voluptatibus corporis!</p>
+<ng-template #elseblock1>
+    <p>Yes this is changed</p>
+</ng-template>
+<button (click) = "toggleFlag()">Toggle para</button>
+<p *ngFor="let counts of count" [ngStyle]="{color: getlength()}">The button is clicked {{counts}} times</p>

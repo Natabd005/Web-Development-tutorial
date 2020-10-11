@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery tutorial</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        .styleclass{
+            border: 5px solid black;
+        }
+
+        #drag{
+            width: 150px;
+            height: 60px;
+            background-color: blueviolet;
+        }
+
+        #drop{
+            width: 400px;
+            height: 400px;
+            float:right;
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <h1>jQuery tutorial</h1>
+    <p>Its a jQuery tutorial by edureka.</p>
+    <p>Start typing.....</p>
+    <div class="cartoons">
+        <img src="../images/sinchan.png">
+        <img src="../images/kazama.jpg">
+        <img src="../images/himamari.jpg">
+    </div>
+
+    <!-- Fading effect -->
+    <button class="fading">BYEEEEE</button>
+    <div class="cartoons">
+        <img id="id1" src="../images/kazama.jpg">
+        <img id="id2" src="../images/himamari.jpg">
+        <img id="id3" src="../images/sinchan.png">
+    </div>
+    <button>Namaste!!</button>
+    <div class="fade">
+        <div id="one" style="width: 2200px; height: 60px; display: none; background:orange;"></div><br>
+        <div id="two" style="width: 2200px; height: 60px; display: none; background:white;"></div><br>
+        <div id="three" style="width: 2200px; height: 60px; display: none; background:green;"></div><br>
+    </div>
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                $("#one").fadeIn();
+                $("#two").fadeIn("slow");
+                $("#three").fadeIn(3000);
+            });
+        });
+    </script>
+    
+    <!-- example of hide() and show() efects -->
+    <button class="button" id="hide">Hide</button>
+    <button class="button" id="show">Show</button>
+
+    <div class="cartoons">
+        <img src="../images/kazama.jpg">
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            $("#hide").click(function(){
+                $("img").hide();
+            });
+            $("#show").click(function(){
+                $("img").show();
+            });
+        });
+    </script>
+
+    
+
+    <!-- Example for click() and val() method -->
+    <script>
+        //good practice to include document.ready()
+        $(document).ready(function() {         //whatever code is added within this function will be executed after the document is ready i.e. when all the <head> is executed
+            $("button").click(function(){
+                alert("Value: " + $("#sometext").val());
+            });
+        });
+    </script>
+    <input type="text" id="sometext" value="">
+    <button>Submit</button>
+   
+
+    <!-- css() method example -->
+    <script>
+       let design = {
+           color:"blue",
+           background:"green",
+           border:"3px solid black"
+       }  
+    </script>
+   
+
+    <!-- Example for addClass() method -->
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                $("img").addClass("styleclass");
+            });
+        });
+    </script>
+    <button>Try addClass()</button>
+   
+
+    <!-- click() event -->
+    <script>
+        $(document).ready(function(){
+            $("img").click(function(){
+                $(this).hide();     //hide() is a jQuery effect and this points to particular element
+            });
+        });
+    </script>
+   
+    <!-- on() event -->
+    <input id="press" type="text" size="10">
+    <script>
+        $(document).ready(function(){
+            $("input").on("keypress",function(){    //on can be used with click and keypress as well
+                $("p:last").hide();
+            });
+        });
+    </script>
+   
+
+    <!-- Sliding Effects -->
+    <button class="sliding">SLIDE</button>
+    <div class="div1" style="width: 90px; height: 60px;display:none;background-color: pink;"></div>
+    <script>
+        $(document).ready(function(){
+            $("button").on("click",function(){
+                $(".div1").slideToggle("slow");
+            });
+        });
+    </script>
+
+    <h1>jQuery tutorial</h1>
+    <!-- jQuery UI -->
+    <script>
+        $(function(){   //shorthand for document.ready()
+            $("#drag").draggable();
+        });
+    </script>
+    <div id="drag">
+        <p>Drag me around</p>
+    </div>
+    <img src="../images/sinchan.png" id="img1">
+    <script>
+        $(function(){
+            $("#img1").draggable();
+            $("#drop").droppable();
+        });
+    </script>
+    <div id="drop">
+        <p>My homeeee</p>
+    </div>
+
+    <!-- datepicker = calender -->
+    <input id="date" type="text" size="10">
+    <script>
+        $(function(){
+            $("#date").datepicker();
+        });
+    </script>
+</body>
+</html>
